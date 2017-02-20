@@ -14,27 +14,21 @@
 
 ### Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
-
-
-###2. Identify potential shortcomings with your current pipeline
+###1. Pipeline Description : 
+	My pipeline consisted of 5 steps. 
+	1. Loaded the video/image and converted it into grayscale.
+	2. The grayscale image was darkened to improve contrast and improve recognition of bright lane lines.
+	3. Gaussian smoothing (kernel size = 5) is applied to the image 
+	4. Canny edge detection is applied (low threshold = 50 and high threshold = 150)
+	5. Apply an image mask to remove 
+	6. Apply Hough Tranform line detection algorithm 
+	7. Draw the line segments denoting the detected right and left lane. This bit was tricky as it required the line segments within a lane to be joined and extrapolated to have the desired result.
 
 
-One potential shortcoming would be what would happen when ... 
+###2. Potential shortcomings with the current pipeline
+	1. The dimension of mask is set such that it works fine for a straight & flat road but starts to fail when the road either has a curve or a crest as it mistakes the bright background as edges.
+	2. In case of a brighter road and yellow lane, edge detection becomes difficult. 
 
-Another shortcoming could be ...
 
-
-###3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+###3. Possible improvements to the pipeline
+	1. In order to improve edge detection; we can convert image to HSV and construct yellow and white mask. Combining these two mask with bitwise OR to the darkened image could improve the edge detection on brighter roads. 
