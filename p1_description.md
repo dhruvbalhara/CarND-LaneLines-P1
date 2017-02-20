@@ -22,7 +22,11 @@
 	4. Canny edge detection is applied (low threshold = 50 and high threshold = 150)
 	5. Apply an image mask to remove 
 	6. Apply Hough Tranform line detection algorithm 
-	7. Draw the line segments denoting the detected right and left lane. This bit was tricky as it required the line segments within a lane to be joined and extrapolated to have the desired result.
+	7. Draw the line segments denoting the detected right and left lane. This bit was tricky as it required the line segments within a lane to be joined and extrapolated to have the desired result. 
+			1. We first separate all the lines and categories them as right or left lane on basis of their slope. 
+			2. We then find the furthest points on the respective lanes (Xmax, Ymax, Xmin, Ymin).  While we find the furthest point, we remove improbable lines (for example - left lane lines cannot have x value greater than half of image width and vice versa for right lane)
+			3. We use the furthest point to draw the lane lines.
+	
 
 
 ###2. Potential shortcomings with the current pipeline
