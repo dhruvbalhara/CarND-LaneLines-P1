@@ -7,7 +7,7 @@ File Description
 ---
 [Project Pipeline Description](https://github.com/dhruvbalhara/CarND-LaneLines-P1/blob/master/p1_description.md)
 
-Jupiter Notebook with the [project code / solution](https://github.com/dhruvbalhara/CarND-LaneLines-P1/blob/master/p1_solution.ipynb)
+Jupiter Notebook with the [project code / solution](https://github.com/dhruvbalhara/CarND-LaneLines-P1/blob/master/P1.ipynb)
 
 Output of [test images](https://github.com/dhruvbalhara/CarND-LaneLines-P1/tree/master/test_images) is placed in [test_images_output](https://github.com/dhruvbalhara/CarND-LaneLines-P1/tree/master/test_images_output) folder
 
